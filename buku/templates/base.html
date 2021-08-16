@@ -1,0 +1,47 @@
+
+{% include 'material/includes/material_css.html' %}
+{% include 'material/includes/material_js.html' %}
+{% load material_form %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUSTAKA PREDI</title>
+</head>
+<body>
+    <!-- Navbar goes here -->
+    <header>
+        <div class="navbar-fixed">
+          <nav>
+            <div class="nav-wrapper  indigo darken-3">
+             <strong>&nbsp;&nbsp;PERPUSTAKAAN PRIBADI</strong>
+              <ul class="right hide-on-med-and-down">
+                {% if user.is_authenticated %}
+                <li>Welcome Back <strong>{{ user.username }}</strong> </li>
+                <li><a href="{% url 'logout' %}">Log out</a></li>
+                {% else %}
+                <li>  <a href="{% url 'login' %}">Log In</a></li>
+                {% endif %}
+
+              </ul>
+            </div>
+          </nav>
+        </div>
+    </header>
+    {% block content %}
+    {% endblock content %}
+    
+    <!-- <script type="text/javascript">
+    
+    $(document).ready(function() {
+         $('select').material_select();
+    });
+    </script> -->
+    
+    
+</body>
+</html>
+

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+
+<div class="container">
+
+  
+  
+  
+  <div class="section">
+  
+    
+  
+    <!-- Page Layout here -->
+    <div class="row">
+    
+      <div class="col s12">
+        <!-- Teal page content  -->
+        <div class="row">
+          {% for buku in object_list %}
+
+          <div class="col s12 m4 14">
+            <div class="card">
+              <div class="card-image">
+                <img width="305" height="229" src="{{ buku.sampul.url }}">
+                <span class="card-title">{{ buku.judul }}</span>
+              </div>
+              <div class="card-content">
+                <p>{{ buku.judul }}</p>
+              </div>
+              <div class="card-action">
+                {{ buku.penulis }} | {{ buku.penerbit }}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- UJI COBA -->
+
+
+
+
+
+
+
+<!-- end ujicoba -->
+
+
+
+
+
+
+
+</div>
+
+
+<footer class="page-footer">
+  <div class="footer-copyright">
+    <div class="container">
+      © 2021 Copyright Text
+    </div>
+  </div>
+</footer>
+
+    {% endblock content %}
